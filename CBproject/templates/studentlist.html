@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        center {
+            margin-top: 65px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            text-align: center; /* Center the contents of the table */
+        }
+
+        th {
+            border: 1px solid #ddd;
+            padding: 18px;
+            background-color: #59bf5c;
+        }
+
+        #up {
+            padding: 20px;
+        }
+        .btn{
+            background-color: #59bf5c; 
+            width: 170px; 
+            height: 50px; 
+            cursor: pointer; 
+            font-size: 17px;
+        }
+        .btnu{
+            background-color: #59bf5c;
+             height: 40px; 
+             width: 90px; 
+             cursor: pointer;
+        }
+        .btnd{
+            background-color:rgb(237, 73, 73);
+             height: 40px; 
+             width: 90px; 
+             cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Student Details</h1>
+        <a href="/addstudent"> <button class="btn"><b>Add New Student </b> </button></a> <br><br>
+        <table border="2">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Branch</th>
+                <th>Percent</th>
+                <th>Actions</th>
+            </tr>
+            {% for stu in students %}
+            <tr>
+                <td>{{ stu.id }}</td>
+                <td>{{ stu.name }}</td>
+                <td>{{ stu.branch }}</td>
+                <td>{{ stu.perc }}</td>
+                <td id="up">
+                    <a href="/update/{{ stu.id }}"> <button class="btnu"  ><b> Update</b></button></a> &nbsp; &nbsp;
+                    <a href="/delete/{{ stu.id }}"> <button class="btnd" style=""><b> Delete</b></button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
