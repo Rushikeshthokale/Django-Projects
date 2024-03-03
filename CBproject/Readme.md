@@ -54,6 +54,8 @@ HTML
 CSS
 
 Photos:
+
+
 Studentdetails Page:
 
 
@@ -82,5 +84,5 @@ Update Student Details Page:
 
 
 
-Credits
+Credits:
 This project was created by Rushikesh Thokale.
